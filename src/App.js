@@ -23,7 +23,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/:category" element={<ErrorCategory/>}/>
+        <Route path="/:cat" element={<ErrorCategory/>}/>
         <Route path="/:category/:error" element={<Error/>}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>

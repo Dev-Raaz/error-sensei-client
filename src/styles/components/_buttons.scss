@@ -1,0 +1,253 @@
+/**
+* Styles for all the Buttons
+**/
+
+button {
+    font-size: $sz-m;
+    padding: $sz-xs $sz-xl;
+    border: none;
+    border-radius: 100rem;
+    cursor: pointer;
+}
+
+
+// @Primary Button
+.btn-prm {
+    background-color: $prm-color;
+    color: white;
+    transition: background-color 200ms linear;
+}
+
+.btn-prm:hover {
+    background-color: $prm-hover;
+    transition: background-color 200ms linear;
+}
+
+.btn-prm:active {
+    background-color: $prm-active;
+    transition: background-color 200ms linear;
+}
+
+
+// @Primary Button
+.btn-sec {
+    background-color: $sec-color;
+    color: $prm-color;
+    border: 1px solid $prm-color;
+    transition: background-color 200ms linear;
+}
+
+.btn-sec:hover {
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+
+.btn-sec:active {
+    background-color: $sec-active;
+    transition: background-color 200ms linear;
+}
+
+
+
+// @Icon Button
+.icon-btn {
+    padding: $sz-m;
+    border-radius: 100rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 200ms linear;
+}
+
+.icon-btn img {
+    height: 24px;
+    width: 24px;
+}
+
+//States
+.icon-btn:hover {
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+
+.icon-btn:active {
+    background-color: $sec-active;
+    transition: background-color 200ms linear;
+}
+
+// @Disabled
+button.disabled {
+    opacity: 0.5;
+}
+
+// Primary disabled
+.btn-prm.disabled {
+    background-color: $para-color;
+    color: white;
+    background-color: transparent;
+}
+
+.btn-prm.disabled:hover {
+    background-color: $para-color;
+    color: white;
+    background-color: transparent;
+}
+
+.btn-prm.disabled:active {
+    background-color: $para-color;
+    color: white;
+    background-color: transparent;
+}
+
+// Secondary disabled
+.btn-sec.disabled {
+    border-color: $para-color;
+    color: $para-color;
+    background-color: transparent;
+}
+
+.btn-sec.disabled:hover {
+    border-color: $para-color;
+    color: $para-color;
+    background-color: transparent;
+}
+
+.btn-sec.disabled:active {
+    border-color: $para-color;
+    color: $para-color;
+    background-color: transparent;
+}
+
+// @FAB Button
+.fab-btn {
+    padding: 0;
+    border-radius: 100rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transition: opacity 200ms linear;
+    background-color: white;
+    border: 4px solid $prm-color;
+
+    height: 56px;
+    width: 56px;
+
+    box-shadow: 1px 1px 5px rgba(112, 112, 112, 0.2);
+
+    position: fixed;
+    bottom: $sz-xxl;
+    right: $sz-m;
+    z-index: 10;
+    transition: background-color 200ms linear;
+}
+
+.fab-btn > img {
+    height: 16px;
+    width: 16px;
+}
+
+// States
+.fab-btn:hover {
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+.fab-btn:active {
+    opacity: 0.5;
+    transition: opacity 200ms linear;
+}
+
+.fab-btn.show-scroll:hover div{
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+
+// Show Scroll
+.fab-btn.show-scroll {
+    border: none;
+}
+
+.fab-btn.show-scroll div {
+    background-color: white;
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// --------------------
+// @MEDIA QUERRIES
+// --------------------
+
+@media only screen and (min-width: 768px) {
+    button {
+        font-size: $sz-m-768;
+        padding: $sz-xs-768 $sz-xl-768;
+    }
+
+    // @FAB Button
+    .fab-btn {
+        right: $sz-xxl-768;
+        border-width: 4px;
+    }
+
+    .fab-btn > img, .fab-btn div img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    button {
+        font-size: $sz-m-1280;
+        padding: $sz-xs-1280 $sz-xl-1280;
+    }
+
+    // @FAB Button
+    .fab-btn {
+        right: $sz-xxl-1280;
+        bottom: $sz-xxl-1280;
+        height: 64px;
+        width: 64px;
+    }
+
+    // Div
+    .fab-btn.show-scroll div {
+        height: 56px;
+        width: 56px;
+    }
+
+    .fab-btn > img, .fab-btn div img {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    button {
+        font-size: $sz-m-1440;
+        padding: $sz-xs-1440 $sz-xl-1440;
+    }
+
+    // @FAB Button
+    .fab-btn {
+        right: $sz-xxl-1440;
+        bottom: $sz-xxl-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    button {
+        font-size: $sz-m-1920;
+        padding: $sz-xs-1920 $sz-xl-1920;
+    }
+
+    // @FAB Button
+    .fab-btn {
+        right: $sz-xxl-1920;
+        bottom: $sz-xxl-1920;
+    }
+}

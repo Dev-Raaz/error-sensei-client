@@ -1,0 +1,75 @@
+/**
+* @titl Mobile Navbar
+**/ 
+
+.mob-navbar{
+    position: fixed;
+    top: 0;
+    display: block;
+    height: 100vh;
+}   
+
+// @Mob Nav Header
+.mob-navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7.2rem;
+}
+
+// @MOB NAVBAR LINK
+.mob-navbar-link {
+    display: block;
+    padding: $sz-m;
+    border-left: 0.3rem solid transparent;
+    border-radius: 0.8rem;
+    margin-bottom: 0;
+
+    transition: background-color 200ms linear;
+}
+
+//States
+.mob-navbar-link.active {
+    border-color: $prm-color;
+}
+
+.mob-navbar-link:hover {
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+
+.mob-navbar-link:active {
+    background-color: $sec-active;
+    transition: background-color 200ms linear;
+}
+
+// @SUBSCRIBE MOB NAVBAR
+.mob-navbar .btn-prm {
+    margin-top: $sz-xxl;
+}
+
+// @HIDE
+.hide {
+    display: none;
+}
+
+
+// -------------------------------
+// @MEDIA QUERRIES
+// -------------------------------
+
+@media only screen and (min-width: 1280px) {
+    .mob-navbar-header {
+        height: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+}
+
+@media only screen and (min-width: 1920px) {
+    .mob-navbar-header {
+        height: 8.8rem;
+    }
+}

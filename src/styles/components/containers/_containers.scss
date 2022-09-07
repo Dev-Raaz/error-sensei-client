@@ -1,0 +1,43 @@
+/**
+* @titl Container Styels
+* @desc Here we define styles for the various containers that wrap around different pages.
+*/
+
+//Main Container
+main{
+    padding: $sz-xxl $sz-m;
+}
+
+
+/**
+* @titl Media Queries
+* @desc Media queries for the containers 
+*/
+
+//@media screen min-width: 768px
+@media screen and (min-width: 768px){
+    main{
+        padding: $sz-xxl-768;
+    }
+}
+
+//@media screen min-width: 1280px
+@media screen and (min-width: 1280px){
+    main{
+        padding: $sz-xxl-1280;        
+    }
+}
+
+//@media screen min-width: 1440px
+@media screen and (min-width: 1440px){
+    main{
+        padding: $sz-xxl-1440;
+    }
+}
+
+//@media screen min-width: 1920px
+@media screen and (min-width: 1920px){
+    main{
+        padding: $sz-xxl-1920;
+    }
+}

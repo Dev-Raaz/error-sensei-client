@@ -1,0 +1,21 @@
+/*
+* @titl Component Styles
+* @desc This file imports all the different component styles 
+*       used in this page.
+*/
+
+@import './containers/containers';
+@import './buttons';
+@import './tag';
+@import './navbar/navbar';
+
+@import './home/categories';
+@import './home/popularErrors';
+
+@import './errorCategory/errorCategoryHero';
+
+@import './error/errorHero';
+@import './error/errorBody';
+@import './error/share';
+
+@import './skeleton/skeleton';

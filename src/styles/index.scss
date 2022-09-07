@@ -1,0 +1,12 @@
+/*
+* @titl  Main File for styles 
+* @desc  This file is to be imported in the index.js file to avail all the styles.
+* @conv  We are using kebab-case for the naming classes and other style variables. 
+*/
+
+@import './reset';
+@import './variables';
+@import './components/components';
+@import './pages/pages';
+@import './typography/typography';
+@import './utils';

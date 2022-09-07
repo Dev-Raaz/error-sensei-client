@@ -1,0 +1,93 @@
+/**
+* @Share
+**/
+
+// Share Wrapper
+.share-wrapper {
+    margin: auto;
+    display: flex;
+    max-width: $max-width;
+    margin: auto;
+}
+
+.share {
+    display: inline-flex;
+    padding: $sz-m;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: $sz-xl;
+    background-color: $sec-hover;
+    border-radius: $rad-l;
+}
+
+// Icons
+.share .icon {
+    height: 4.8rem;
+    width: 4.8rem;
+    margin: 0 $sz-m;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $prm-color;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+// icon
+.share .icon:hover {
+    background-color: $sec-hover;
+    transition: background-color 200ms linear;
+}
+
+.share .icon:active {
+    opacity: 0.5;
+    transition: opacity 200ms linear;
+}
+
+// Icon
+.share .icon img {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+// ------------------------------------------
+// @MEDIA QUERRIES
+// ------------------------------------------
+@media only screen and (min-width: 768px) {
+    
+    // @Share
+    .share {
+        margin-top: $sz-xl-768;
+    }
+
+    // Icon
+    .share .icon {
+        height: 5.6rem;
+        width: 5.6rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    // @Share
+    .share {
+        margin-top: $sz-xl-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    
+    // @Share
+    .share {
+        margin-top: $sz-xl-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    
+    // @Share
+    .share {
+        margin-top: $sz-xl-1920;
+    }
+}

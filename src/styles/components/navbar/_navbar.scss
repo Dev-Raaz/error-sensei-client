@@ -1,0 +1,136 @@
+// The Header
+header {
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    
+}
+
+// Navbar Component
+.navbar {
+    height: 7.2rem;
+    width: 100%;
+    padding: 0 $sz-m;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+// @Logo Component
+.logo {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo span{
+    color: $prm-color;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: $sz-l;
+    // background: $prm-grad;
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+}
+
+// @Nav Link
+.nav-link {
+    margin-right: $sz-m;
+}
+
+//States
+.nav-link.active {
+    color: $prm-color;
+}
+
+
+// @Nav Components
+.nav-components {
+    display: none;
+}
+
+// ---------------------------
+// @MEDIA QUERRIES
+// ---------------------------
+
+@media only screen and (min-width: 768px){
+    .navbar {
+        padding: 0 $sz-xxl-768;
+    }
+
+    // @Logo
+    .logo span {
+        font-size: $sz-l-768;
+    }
+
+    // @Nav Link
+    .nav-link {
+        margin-right: $sz-m-768;
+    }
+
+    // @Nav Components
+    .nav-components {
+        display: inline-block;   
+    }
+
+    
+    // @Menu Btn
+    #menu {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1280px){
+    .navbar {
+        padding: 0 $sz-xxl-1280;
+        height: 8rem;
+    }
+
+    // @Logo
+    .logo span {
+        font-size: $sz-l-1280;
+    }
+    
+    // @Nav Link
+    .nav-link {
+        margin-right: $sz-m-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .navbar{
+        padding: 0 $sz-xxl-1440;
+    }
+
+    // @Logo
+    .logo span {
+        font-size: $sz-l-1440;
+    }
+    
+    // @Nav Link
+    .nav-link {
+        margin-right: $sz-m-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    .navbar{
+        padding: 0 $sz-xxl-1920;
+        height: 8.8rem;
+    }
+
+    // @Logo
+    .logo span {
+        font-size: $sz-l-1920;
+    }
+
+    // @Nav Link
+    .nav-link {
+        margin-right: $sz-m-1920;
+    }
+}
+
+@import './mobnav';

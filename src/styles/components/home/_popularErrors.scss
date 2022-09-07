@@ -1,0 +1,186 @@
+/**
+* @Home Popular Errors
+**/
+
+// @Title
+.popular-errors > .title {
+    text-align: center;
+}
+
+.popular-errors > .title span {
+    color: $prm-color;
+}
+
+// @Description
+.popular-errors > .desc {
+    text-align: center;
+}
+
+
+// @Popular errors grid
+.popular-errors-grid {
+    display: grid;
+    grid-template-columns: auto;
+    gap: $sz-l;
+}
+
+// @Error post card
+.error-post-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+//States
+.error-post-card:hover .title {
+    color: $prm-color;
+    transition: color 200ms linear;
+}
+.error-post-card:hover .timestamps span {
+    color: $para-color;
+}
+
+// Image
+.error-post-card > img {
+    height: 30rem;
+    background-color: $skel-color;
+    border-radius: $sz-l;
+    width: 100%;
+    object-fit: cover;
+}
+
+// Heading
+.error-post-card .title {
+    font-weight: bold;
+    color: $head-color;
+    margin-top: 0;
+    transition: color 200ms linear;
+}
+
+// @Timestamps
+.error-post-card .timestamps {
+    display: flex;
+}
+
+// Posted and Read Time
+.posted, .read-time {
+    display: inline-flex;
+    align-items: center;
+}
+
+.posted {
+    margin-right: $sz-m;
+}
+
+.posted > img, .read-time > img {
+    margin-right: 5px;
+}
+
+// @View More
+#view-more {
+    margin: auto;
+    display: block;
+    margin-top: $sz-xl;
+}
+
+/**
+* @MEDIA QUERRIES
+**/
+
+@media only screen and (min-width: 768px) {
+    // @Popular errors grid
+    .popular-errors-grid {
+        grid-template-columns: 1fr;
+        gap: $sz-l-768;
+    }
+
+    // @Error card
+    .error-post-card {
+        flex-direction: row;
+    }
+
+    // Image
+    .error-post-card > img {
+        height: 100%;
+        width: 30rem;
+        margin-right: $sz-m-768;
+    }
+
+    // Heading
+
+    // @Timestamps
+    .posted {
+        margin-right: $sz-m-768;
+    }
+
+    // @View more
+    #view-more {
+        margin-top: $sz-xl-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .popular-errors-grid {
+        gap: $sz-l-1280;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    // @Error post card
+
+    // @Timestamps
+    .posted {
+        margin-right: $sz-m-1280;
+    }
+
+    // @View more
+    #view-more {
+        margin-top: $sz-xl-1280;
+    }
+    
+}
+
+@media only screen and (min-width: 1440px) {
+    .popular-errors-grid {
+        gap: $sz-l-1440;
+    }
+    
+    // @Error post card
+    
+    
+    // @Timestamps
+    .posted {
+        margin-right: $sz-m-1440;
+    }
+    
+    // @View more
+    #view-more {
+        margin-top: $sz-xl-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .popular-errors-grid {
+        gap: $sz-l-1920;
+    }
+    
+    // @Error post card
+    
+    // Image
+    .error-post-card > img {
+        width: 35rem;
+    }
+    
+    // @Timestamps
+    .posted {
+        margin-right: $sz-m-1920;
+    }
+
+    // @View more
+    #view-more {
+        margin-top: $sz-xl-1920;
+    }
+}
+
+
+
+

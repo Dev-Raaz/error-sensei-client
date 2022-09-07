@@ -9,7 +9,8 @@ const CategoryErrors = ({name, slug, isLoading}) => {
   const {posts} =  useContext( PostsContext )   
   const [ displayPosts, setDisplayPosts ] = useState( 4 )
 
-  isLoading = true
+  // Loading . . .
+  isLoading = false
 
 
   // @Use Effect

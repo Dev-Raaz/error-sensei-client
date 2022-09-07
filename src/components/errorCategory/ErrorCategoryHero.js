@@ -5,7 +5,8 @@ import ErrorCategoryHeroSkeleton from '../skeletons/errorCategory/ErrorCategoryH
 
 const ErrorCategoryHero = ({ name, isLoading }) => {
 
-  isLoading = true
+  // Loading . . .
+  isLoading = false
 
   if(isLoading)
     return <ErrorCategoryHeroSkeleton/>

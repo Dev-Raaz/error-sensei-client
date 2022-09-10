@@ -1,11 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import 
-{
-  FacebookShareButton, 
-  TwitterShareButton,
-  LinkedinShareButton,
-  EmailShareButton
-} from 'react-share'
+import { isDesktop } from 'react-device-detect'
+
+import { RWebShare } from 'react-web-share'
 
 // @Context
 import { PostContext } from '../../context/PostContext'
@@ -25,47 +21,24 @@ const Share = () => {
     return null
 
   
-
   return (
     <div className='share-wrapper'>
         <div className='share'>
-            <FacebookShareButton
-              title='Here is an interesting post for you'
-              url={URL}
+            <RWebShare
+              data={
+                {
+                  text:"Here is a new post from Error Sensei",
+                  url: URL,
+                  title: "Post from Error Sensei"
+                }
+              }
+              sites={['facebook', 'twitter', 'linkedin', 'mail']}
+              disableNative={isDesktop}
             >
               <div className='icon'>
-                  <img src='/res/socials/facebook.svg' alt='Facebook Icon'/>
+                  <img src='/res/socials/share.svg' alt='Share Icon'/>
               </div>
-            </FacebookShareButton>
-            
-            <TwitterShareButton
-              title='Here is an interesting post for you'
-              url={URL}
-              quote='Here is a post from errorsensei.netlify.app'
-              hashtags={['errorsensei']}
-            >
-              <div className='icon'>
-                <img src='/res/socials/twitter.svg' alt='Facebook Icon'/>
-              </div>
-            </TwitterShareButton>
-            
-            <LinkedinShareButton
-              title='Here is an interesting post for you'
-              url={URL}
-            >
-              <div className='icon'>
-                <img src='/res/socials/linkedin.svg' alt='Facebook Icon'/>
-              </div>
-            </LinkedinShareButton>
-
-            <EmailShareButton
-              title='Here is an interesting post for you'
-              url={URL}
-            >
-              <div className='icon'>
-                <img src='/res/socials/email.svg' alt='Facebook Icon'/>
-              </div>
-            </EmailShareButton>
+            </RWebShare>
         </div>
     </div>
   )

@@ -9,6 +9,8 @@ import TechnologyProvider from '../context/TechnologyContext'
 import BackBtn from '../components/BackBtn'
 
 // Main Component
+
+
 const ErrorCategory = () => {
 
   let {pathname} = useLocation()

@@ -98,7 +98,28 @@ export const getPost = async(slug, setPost, setIsLoading) => {
     setPost(post)
 }
 
-export const getCategory = ({slug}) => {
+export const getCategory = async(slug) => {
+    const QUERRY = gql`
+    {
+        technology(where: {slug: "javascript"}){
+              name,
+          posts{
+            slug,
+            id,
+            coverImage{
+              url
+            },
+            description,
+            title,
+            readTime,
+            updatedAt
+              }
+        }
+    }
+    `
 
+    // Technology
+    const {technology} =  await gCMS.request(QUERRY)
+    console.log(technology)
 }
 

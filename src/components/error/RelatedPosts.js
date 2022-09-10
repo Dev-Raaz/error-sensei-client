@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
 
 const RelatedPosts = () => {
-  
+  //    
   const { isLoading } = useContext(PostContext)
   
   // If loading   

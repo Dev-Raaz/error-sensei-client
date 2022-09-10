@@ -1,13 +1,10 @@
 // Testing
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 
 // Creating and exporting the context
 export const TechnologyContext = createContext()
 
 const TechnologyProvider = ({ children }) => {
-   
-  const [posts, setPosts] = useState([])
-  const [slug, setSlug] = useState()
   
   return (
     <TechnologyContext.Provider>

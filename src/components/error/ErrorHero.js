@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
-const ErrorHero = ({technology, coverImage, title, description, author, readTime, date}) => {
+// @Context
+import { PostContext } from '../../context/PostContext'
 
-  // Checking if the fields are okay or still waiting
-  if(!technology || !coverImage || !title || !description || !author || !readTime || !date){
-    return <h1>Loading . . .</h1>
-  }
+// @Skeleton
+import ErrorHeroSkeleton from '../skeletons/error/ErrorHeroSkeleton'
 
+const ErrorHero = ({date}) => {
+
+  
+  // Getting PostContext
+  const {post, isLoading} = useContext(PostContext)
+
+  // Checking Loading
+  if(isLoading)
+    return <ErrorHeroSkeleton/>
+
+  
+  const {coverImage, technology, title, description, author, readTime} = post
+  
 
   return (
     <div className='error-hero'>
@@ -19,13 +31,12 @@ const ErrorHero = ({technology, coverImage, title, description, author, readTime
         alt={`${title} Page Hero`}/>
         
         {/* Title */}
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         
         {/* Description */}
         <p>{description}</p>
 
         {/* Author */}
-
         <div className='author'>
             {/* AVATAR */}
             <img 

@@ -18,6 +18,26 @@
 }
 
 
+// Code
+pre {
+    padding: $sz-s;
+    background-color: #000000;
+    border-radius: $rad-l;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+pre::-webkit-scrollbar{
+    display: none;
+}
+
+pre code {
+    color: white;
+    font-size: $sz-m;
+}
+
+
 // ---------------------------------
 // @MEDIA QUERRIES
 // ---------------------------------

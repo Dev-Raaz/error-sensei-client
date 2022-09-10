@@ -8,7 +8,6 @@ const Navbar = () => {
   // To toggle the active link
   const { pathname } = useLocation()
 
-  console.log(pathname)
 
   // @COMPONENT MARKUP   
   return (

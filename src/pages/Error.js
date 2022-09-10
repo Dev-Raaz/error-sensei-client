@@ -8,34 +8,33 @@ import Share from '../components/error/Share'
 import RelatedPosts from '../components/error/RelatedPosts'
 
 // Contexts
-import PostsProvider from '../context/PostsCotext'
+import PostProvider from '../context/PostContext'
 
 import BackBtn from '../components/BackBtn'
-import ErrorHeroSkeleton from '../components/skeletons/error/ErrorHeroSkeleton'
 
-const Error = ({ isLoading }) => { 
-
-  isLoading = true
+const Error = () => { 
   // The state variable holds the current post 
   const {state} = useLocation()
+
+  // Getting the post from the post context
+  // const {post, isLoading} = useContext(PostContext)
 
   // @Test
   // console.log(`From Error Page . . .`)
   // console.log(state)
 
-  if(isLoading)
-    return <ErrorHeroSkeleton/>
-
   return (
-    <PostsProvider>
-      <main>
-        <ErrorHero {...state}/>
-        <ErrorBody/>
-        <Share/>
-        <RelatedPosts/>
-        <BackBtn type='scroll'/>
-      </main>
-    </PostsProvider>
+    <PostProvider>
+      {
+        <main>
+          <ErrorHero {...state}/>
+          <ErrorBody/>
+          <Share/>
+          <RelatedPosts/>
+          <BackBtn type='scroll'/>
+        </main>
+      }
+    </PostProvider>
   )
 }
 

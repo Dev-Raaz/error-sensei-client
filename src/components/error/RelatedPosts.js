@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { PostContext } from '../../context/PostContext'
 
 const RelatedPosts = () => {
+  
+  const { isLoading } = useContext(PostContext)
+  
+  // If loading   
+  if(isLoading)
+    return null
+
   return (
     <div className='popular-errors'>
-        <h1 className='title'>Popular <span>Errors</span></h1>
+        <h1 className='title'>Related <span>Errors</span></h1>
         <p className='desc'>
-        Here are some of the most popular errors solved 
-        for you.
+        Here are some other errors that you might wanna look up.
         </p>
 
         <div className='popular-errors-grid'>

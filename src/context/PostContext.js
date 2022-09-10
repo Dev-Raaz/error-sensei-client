@@ -6,7 +6,6 @@ import { getPost } from "../utils/graphCMS";
 
 // Creating and exporting the Post Context
 export const PostContext = createContext()
-export const GetPostContext = createContext()
 
 
 // Post context provider
@@ -14,13 +13,20 @@ const PostProvider = ( { children } ) => {
     
     // Initial State
     const [ post, setPost ] = useState(null)
-    const [isLoading, setLoading] = useState(true)
-    const location = useLocation()
+    const [isLoading, setIsLoading ] = useState(true)
+
+    const {pathname} = useLocation()
 
     // Use Effect
     useEffect( () => {
-        console.log(location)
-    } )
+        const slug = pathname.split('/')[2]
+        // Runs once when the component renders
+        try{
+            getPost(slug, setPost, setIsLoading)
+        }catch(err){
+            console.log(err)
+        }
+    }, [pathname])
 
     // Get Post
     return (

@@ -33,9 +33,6 @@ export const getPosts = async(setPosts, setIsLoading) => {
     const {posts} = await gCMS.request(QUERRY)
     setPosts(posts)
     setIsLoading(false)
-
-    console.log(`Showing Posts . . . .`)
-    console.log(posts)
 }
 
 // Getting the list of all the technologies
@@ -63,16 +60,42 @@ export const getTechnologies = async(setTechnologies, setIsLoading) => {
     setIsLoading(false)
 }
 
-export const getPost = (slug, setPost) => {
-    // const QUERRY = gql`
-    // {
-    //     post(where: {slug: ${slug}}){
-    //         id,
-    //         title,
-    //         description,
-    //     }
-    // }
-    // `
+// Gets a single post
+export const getPost = async(slug, setPost, setIsLoading) => {
+
+    const QUERRY = gql`
+    {
+        post(where: {slug: "${slug}"}){
+            id
+            slug
+            title
+            description
+            coverImage {
+                url
+            }
+            technology {
+                name
+                slug
+            }
+            updatedAt
+            readTime
+            author{
+                avatar{
+                    url
+                }
+                name
+            },
+            content{
+                html
+            }
+        }
+    }
+    `
+    // Getting and setting authors
+    const {post} = await gCMS.request(QUERRY)
+    setIsLoading(false)
+    // console.log(post)
+    setPost(post)
 }
 
 export const getCategory = ({slug}) => {

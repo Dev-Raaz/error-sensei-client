@@ -1,10 +1,41 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
 
+const RelatedPost = ({relatedPost}) => {
+
+    console.log(relatedPost)
+
+    return (
+        <a className='error-post-card' 
+         href={`/${relatedPost.technology.slug}/${relatedPost.slug}`}>
+                <img 
+                src={relatedPost.coverImage.url || '/res/defaults/defaultBg.svg'} 
+                alt='Some Error' />
+                <div className='error-description'>
+                    <span className='tag'>React JS</span>
+                    <p className='title'>{relatedPost.title}</p>
+                    <p className='desc'>{relatedPost.description}</p>
+
+                    <div className='timestamps'>
+                        <div className='posted'>
+                            <img src='/res/others/calender.svg' alt='Calender'/>
+                            <span>3 Days Ago</span>
+                        </div>
+
+                        <div className='read-time'>
+                            <img src='/res/others/clock.svg' alt='Clock'/>
+                            <span>{relatedPost.readTime}</span>
+                        </div>
+                    </div>
+                </div>
+        </a>
+    )
+}
+
 const RelatedPosts = () => {
   //    
   const { post, isLoading } = useContext(PostContext)
-  
+
   // If loading   
   if(isLoading || post === null)
     return null
@@ -17,49 +48,12 @@ const RelatedPosts = () => {
         </p>
 
         <div className='popular-errors-grid'>
-            <a className='error-post-card' href='/reactjs/why-do-i-see-an-empty-screen'>
-                <img src='/res/defaults/defaultBg.svg' alt='Some Error' />
-                <div className='error-description'>
-                    <span className='tag'>React JS</span>
-                    <p className='title'>Why do I See an Empty screen even after my code has been 
-                    compiled in React Native</p>
-                    <p className='desc'>The programming language of the web.</p>
-
-                    <div className='timestamps'>
-                        <div className='posted'>
-                            <img src='/res/others/calender.svg' alt='Calender'/>
-                            <span>3 Days Ago</span>
-                        </div>
-
-                        <div className='read-time'>
-                            <img src='/res/others/clock.svg' alt='Clock'/>
-                            <span>12 Mins</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a className='error-post-card' href='/reactjs/why-do-i-see-an-empty-screen'>
-                <img src='/res/defaults/defaultBg.svg' alt='Some Error' />
-                <div className='error-description'>
-                    <span className='tag'>React JS</span>
-                    <p className='title'>Why do I See an Empty screen even after my code has been 
-                    compiled in React Native</p>
-                    <p className='desc'>The programming language of the web.</p>
-
-                    <div className='timestamps'>
-                        <div className='posted'>
-                            <img src='/res/others/calender.svg' alt='Calender'/>
-                            <span>3 Days Ago</span>
-                        </div>
-
-                        <div className='read-time'>
-                            <img src='/res/others/clock.svg' alt='Clock'/>
-                            <span>12 Mins</span>
-                        </div>
-                    </div>
-                </div>
-            </a>         
+            {
+                post.relatedPosts.map(relatedPost => <RelatedPost 
+                                                      key={relatedPost.id} 
+                                                      relatedPost={relatedPost}
+                                                      />)
+            }     
         </div>
     </div>
   )

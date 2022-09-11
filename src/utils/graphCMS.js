@@ -84,9 +84,23 @@ export const getPost = async(slug, setPost, setIsLoading) => {
                     url
                 }
                 name
-            },
+            }
             content{
                 html
+            }
+            relatedPosts{
+                id
+                slug
+                title
+                description
+                coverImage{
+                  url
+                }
+                readTime
+                technology{
+                  name
+                  slug
+                }
             }
         }
     }

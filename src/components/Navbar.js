@@ -63,7 +63,7 @@ const Navbar = () => {
                 Home
             </a>
             <a href='/categories' 
-            className={ pathname === '/categories' ? 'mob-navbar-link active' 
+            className={ pathname === '/#' ? 'mob-navbar-link active' 
             : 'mob-navbar-link' }>
                 Categories
             </a>

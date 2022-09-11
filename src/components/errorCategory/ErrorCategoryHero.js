@@ -11,8 +11,6 @@ const ErrorCategoryHero = ({ name }) => {
   // Loading . . .
   const {technology, isLoading} = useContext(TechnologyContext)
 
-  console.log(technology)
-
   if(isLoading)
     return <ErrorCategoryHeroSkeleton/>
 

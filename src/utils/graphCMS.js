@@ -94,10 +94,10 @@ export const getPost = async(slug, setPost, setIsLoading) => {
     // Getting and setting authors
     const {post} = await gCMS.request(QUERRY)
     setIsLoading(false)
-    // console.log(post)
     setPost(post)
 }
 
+// Get a single technology
 export const getTechnology = async(slug, setTechnology, setIsLoading) => {
     const QUERRY = gql`
     {

@@ -1,25 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // @User defined imports
 import ErrorCategoryHeroSkeleton from '../skeletons/errorCategory/ErrorCategoryHeroSkeleton'
 
-const ErrorCategoryHero = ({ name, isLoading }) => {
+// Context imports
+import { TechnologyContext } from '../../context/TechnologyContext'
+
+const ErrorCategoryHero = ({ name }) => {
 
   // Loading . . .
-  isLoading = false
+  const {technology, isLoading} = useContext(TechnologyContext)
+
+  console.log(technology)
 
   if(isLoading)
     return <ErrorCategoryHeroSkeleton/>
 
   return (
     <div className='error-category-hero'>
-        <img src='/res/defaults/defaultBg.svg' alt='Error Category Hero'/>
+        <img 
+        src={technology.icon.url || '/res/defaults/defaultBg.svg'} 
+        alt='Error Category Hero'/>
         <div className='error-category-description'>
             <h1 className='top-mar-0 title'>
-                <span>{name} </span>
+                <span>{technology.name} </span>
                 Errors
             </h1>
-            <p>Here we have listed the solution for different errors in {name}.</p>
+            <p>Here we have listed the solution for different errors in {technology.name}.</p>
         </div>
     </div>
   )

@@ -4,41 +4,20 @@ import React, { useState, useContext } from 'react'
 import { PostsContext } from '../../context/PostsCotext' 
 import ErrorsSkeleton from '../skeletons/home/PopularErrorSkeleton'
 
-const CategoryErrors = ({name, slug, isLoading}) => {
-  // Posts
-  const {posts} =  useContext( PostsContext )   
-  const [ displayPosts, setDisplayPosts ] = useState( 4 )
-
-  // Loading . . .
-  isLoading = false
+// Context Imports
+import { TechnologyContext } from '../../context/TechnologyContext'
 
 
-  // @Use Effect
-  const showMore = () => {
+// @Error Card
+const ErrorCard = ({post}) => {
 
-    if(displayPosts + 4 <= posts.length) {
-        setDisplayPosts( displayPosts + 4 )
-    } else {
-        setDisplayPosts(posts.length)
-    }
-  }
-
-  return (
-    <div className='popular-errors'>
-        <h1 className='title'><span>All </span> Errors</h1>
-
-        <div className='popular-errors-grid'>
-            {   
-                isLoading
-                ? Array(4).fill(0).map(post => <ErrorsSkeleton/>)
-                : posts.slice(0,displayPosts).map(post => 
-                <a key={post.id} className='error-post-card' href='/'>
-                    <img src='/res/defaults/defaultBg.svg' alt='Some Error' />
+    return (
+        <a className='error-post-card' href={`/${post.technology.slug}/${post.slug}`}>
+                    <img src={post.coverImage.url} alt='Some Error' />
                     <div className='error-description'>
                         <span className='tag'>React JS</span>
-                        <p className='title'>Why do I See an Empty screen even after my code has been 
-                        compiled in React Native</p>
-                        <p className='desc'>The programming language of the web.</p>
+                        <p className='title'>{post.title}</p>
+                        <p className='desc'>{post.description}</p>
 
                         <div className='timestamps'>
                             <div className='posted'>
@@ -48,22 +27,69 @@ const CategoryErrors = ({name, slug, isLoading}) => {
 
                             <div className='read-time'>
                                 <img src='/res/others/clock.svg' alt='Clock'/>
-                                <span>12 Mins</span>
+                                <span>{post.readTime}</span>
                             </div>
                         </div>
                     </div>
-                </a>)
+                </a>
+    )
+}
+
+
+const CategoryErrors = () => {
+  // Posts
+  const {posts} =  useContext( PostsContext )   
+  const [ displayPosts, setDisplayPosts ] = useState( 4 )
+
+  const {technology, isLoading} = useContext(TechnologyContext)
+  
+  // Loading . . .
+  if(isLoading)
+    return null
+
+
+  // @Show more
+  const showMore = () => {
+
+    if(displayPosts + 4 <= posts.length) {
+        setDisplayPosts( displayPosts + 4 )
+    } else {
+        setDisplayPosts(posts.length)
+    }
+  }
+
+  // Main Component   
+  return (
+    <div className='popular-errors'>
+        <h1 className='title'><span>All </span> Errors</h1>
+
+        <div className='popular-errors-grid'>
+            {   
+                isLoading
+                ? 
+                Array(4).fill(0).map(post => <ErrorsSkeleton/>)
+                : 
+                technology.posts.length >= 4
+                ? 
+                technology.posts.slice(0,displayPosts).map(post => 
+                                                       <ErrorCard
+                                                       post={post} key={post.id}/>)
+                : 
+                technology.posts.map(post => <ErrorCard 
+                                              post={post} key={post.id}/>)
             }            
         </div>
 
+        {/* Button */}
         <button 
         id='view-more'
         className={
-            posts.length === displayPosts || posts.length <= 4 
+            technology.posts.length === displayPosts || technology.posts.length <= 4 
             ? 'btn-sec disabled' : 'btn-sec'
             }
         onClick={showMore}
-        disabled={posts.length === displayPosts || posts.length <= 4 ? true : false}>
+        disabled={technology.posts.length === displayPosts || 
+                  technology.posts.length <= 4 ? true : false}>
             View More
         </button>
     </div>

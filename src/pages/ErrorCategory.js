@@ -1,5 +1,4 @@
 import React from 'react'
-import {useLocation} from 'react-router-dom'
 
 // @User defined imports
 import ErrorCategoryHero from '../components/errorCategory/ErrorCategoryHero'
@@ -12,15 +11,12 @@ import BackBtn from '../components/BackBtn'
 
 
 const ErrorCategory = () => {
-
-  let {pathname} = useLocation()
-  let copyPathname = pathname[1].toUpperCase() + pathname.substring(2)
-
+  
   return (
     <TechnologyProvider>
       <main className='error-category'>
-        <ErrorCategoryHero name={copyPathname}/>
-        <CategoryErrors name={copyPathname} slug={pathname.substring(1)}/>
+        <ErrorCategoryHero/>
+        <CategoryErrors/>
         <BackBtn type='scroll'/>
       </main>
     </TechnologyProvider>

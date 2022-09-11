@@ -8,7 +8,7 @@ import { PostContext } from '../../context/PostContext'
 
 
 const Share = () => {
-  const {isLoading} = useContext(PostContext)
+  const {post, isLoading} = useContext(PostContext)
   const [URL, setURL] = useState('https://errorsensei.netlify.app')
 
   // Side Effect
@@ -17,7 +17,7 @@ const Share = () => {
   }, [URL])
 
   // If loading we return null   
-  if(isLoading)
+  if(isLoading || post === null)
     return null
 
   

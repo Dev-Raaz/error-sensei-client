@@ -92,9 +92,13 @@ export const getPost = async(slug, setPost, setIsLoading) => {
     }
     `
     // Getting and setting authors
-    const {post} = await gCMS.request(QUERRY)
-    setIsLoading(false)
-    setPost(post)
+    try{
+        const {post} = await gCMS.request(QUERRY)
+        setIsLoading(false)
+        setPost(post)
+    }catch(err){
+        console.log(err)
+    }
 }
 
 // Get a single technology

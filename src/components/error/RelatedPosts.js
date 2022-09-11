@@ -3,10 +3,10 @@ import { PostContext } from '../../context/PostContext'
 
 const RelatedPosts = () => {
   //    
-  const { isLoading } = useContext(PostContext)
+  const { post, isLoading } = useContext(PostContext)
   
   // If loading   
-  if(isLoading)
+  if(isLoading || post === null)
     return null
 
   return (

@@ -17,6 +17,7 @@ const TechnologyProvider = ({ children }) => {
   // Getting the location
   const {pathname} = useLocation()
 
+  // @Use Effect
   useEffect(()=>{
     const slug = pathname.split('/')[1]
 

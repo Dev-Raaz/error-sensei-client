@@ -5,6 +5,7 @@ import { PostContext } from '../../context/PostContext'
 
 // @Skeleton
 import ErrorHeroSkeleton from '../skeletons/error/ErrorHeroSkeleton'
+import Error404 from '../../pages/Error404'
 
 const ErrorHero = ({date}) => {
 
@@ -16,6 +17,8 @@ const ErrorHero = ({date}) => {
   if(isLoading)
     return <ErrorHeroSkeleton/>
 
+  if(post === null)
+    return <Error404/>
   
   const {coverImage, technology, title, description, author, readTime} = post
   

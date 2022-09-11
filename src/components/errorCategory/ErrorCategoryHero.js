@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 // @User defined imports
 import ErrorCategoryHeroSkeleton from '../skeletons/errorCategory/ErrorCategoryHeroSkeleton'
+import Error404 from '../../pages/Error404'
 
 // Context imports
 import { TechnologyContext } from '../../context/TechnologyContext'
@@ -13,6 +14,8 @@ const ErrorCategoryHero = ({ name }) => {
 
   if(isLoading)
     return <ErrorCategoryHeroSkeleton/>
+  if(technology === null)
+    return <Error404/>
 
   return (
     <div className='error-category-hero'>

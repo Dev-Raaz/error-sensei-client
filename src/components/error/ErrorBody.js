@@ -10,7 +10,7 @@ const ErrorBody = () => {
   // Getting PostContext
   const {post, isLoading} = useContext(PostContext)
 
-  if(isLoading)
+  if(isLoading || post === null)
     return null
 
   return (

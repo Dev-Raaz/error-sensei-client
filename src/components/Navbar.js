@@ -62,7 +62,7 @@ const Navbar = () => {
             : 'mob-navbar-link' }>
                 Home
             </a>
-            <a href='/categories' 
+            <a href='/' 
             className={ pathname === '/#' ? 'mob-navbar-link active' 
             : 'mob-navbar-link' }>
                 Categories

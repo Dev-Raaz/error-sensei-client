@@ -44,7 +44,7 @@ const CategoryErrors = () => {
   const {technology, isLoading} = useContext(TechnologyContext)
   
   // Loading . . .
-  if(isLoading)
+  if(isLoading || technology === null)
     return null
 
 

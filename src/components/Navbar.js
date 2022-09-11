@@ -28,9 +28,9 @@ const Navbar = () => {
                 </a>
                 
                 {/* SUBSCRIBE */}
-                <button id='subscribe' className='btn-prm'>
+                {/* <button id='subscribe' className='btn-prm'>
                     Subscribe
-                </button>
+                </button> */}
             </div>
 
             {/* MENU BUTTON */}
@@ -69,9 +69,9 @@ const Navbar = () => {
             </a>
 
             {/* SUBSCRIBE */}
-            <button className='btn-prm'>
+            {/* <button className='btn-prm'>
                 Subscribe
-            </button>
+            </button> */}
         </nav>
     </header>
   )

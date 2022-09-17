@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import {Helmet} from 'react-helmet'
 
 // @Context
 import { PostContext } from '../../context/PostContext'
@@ -24,7 +25,14 @@ const ErrorHero = ({date}) => {
   
 
   return (
-    <div className='error-hero'>
+    <>
+      {/* React Helmet */}
+      <Helmet>
+        <title>{title}</title>
+        <meta name='description' content={description}/>
+      </Helmet>
+
+      <div className='error-hero'>
         <span className='category-tag'>{technology.name}</span>
         
         {/* Hero Image */}
@@ -71,6 +79,7 @@ const ErrorHero = ({date}) => {
         </div>
 
     </div>
+    </>
   )
 }
 

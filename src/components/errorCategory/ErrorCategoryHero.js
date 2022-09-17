@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Helmet } from 'react-helmet'
 
 // @User defined imports
 import ErrorCategoryHeroSkeleton from '../skeletons/errorCategory/ErrorCategoryHeroSkeleton'
@@ -18,18 +19,24 @@ const ErrorCategoryHero = ({ name }) => {
     return <Error404/>
 
   return (
-    <div className='error-category-hero'>
-        <img 
-        src={technology.icon.url || '/res/defaults/defaultBg.svg'} 
-        alt='Error Category Hero'/>
-        <div className='error-category-description'>
-            <h1 className='top-mar-0 title'>
-                <span>{technology.name} </span>
-                Errors
-            </h1>
-            <p>Here we have listed the solution for different errors in {technology.name}.</p>
-        </div>
-    </div>
+    <>
+      <Helmet>
+        <title>{technology.name}</title>
+        <meta name='description' content={technology.description}/>
+      </Helmet>
+      <div className='error-category-hero'>
+          <img 
+          src={technology.icon.url || '/res/defaults/defaultBg.svg'} 
+          alt='Error Category Hero'/>
+          <div className='error-category-description'>
+              <h1 className='top-mar-0 title'>
+                  <span>{technology.name} </span>
+                  Errors
+              </h1>
+              <p>Here we have listed the solution for different errors in {technology.name}.</p>
+          </div>
+      </div>
+    </>
   )
 }
 
